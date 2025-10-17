@@ -1,0 +1,203 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saiskanda Devatha Ramkumar - Professional Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-gradient-to-r from-blue-800 to-purple-800 shadow-md p-4 sticky top-0">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-white">Saiskanda Devatha Ramkumar</h1>
+            <ul class="flex space-x-6">
+                <li><a href="#about" class="text-gray-200 hover:text-white">About</a></li>
+                <li><a href="#skills" class="text-gray-200 hover:text-white">Skills</a></li>
+                <li><a href="#projects" class="text-gray-200 hover:text-white">Projects</a></li>
+                <li><a href="#education" class="text-gray-200 hover:text-white">Education</a></li>
+                <li><a href="#certifications" class="text-gray-200 hover:text-white">Certifications</a></li>
+                <li><a href="#experience" class="text-gray-200 hover:text-white">Experience</a></li>
+                <li><a href="#contact" class="text-gray-200 hover:text-white">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section with AI-themed background -->
+    <section id="about" class="relative text-white py-20" style="background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20240914/pngtree-ai-technology-abstract-background-generative-art-creative-banner-concept-in-the-image_16208106.jpg'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-black opacity-50"></div> <!-- Overlay for readability -->
+        <div class="container mx-auto text-center relative z-10">
+            <h2 class="text-4xl font-bold mb-4">Hello, I'm Saiskanda Devatha Ramkumar</h2>
+            <p class="text-lg mb-6">Aspiring AI developer with a growing foundation in machine learning, data analysis, and intelligent systems. Currently building hands-on experience through academic projects and professional certification, with a strong interest in benchmarking models and understanding real-world applications of AI. Known for a detail-oriented approach, clear documentation, and a commitment to continuous learning. Eager to contribute to impactful projects while deepening technical and analytical skills in artificial intelligence.</p>
+            <a href="#contact" class="bg-white text-purple-800 px-6 py-2 rounded-full hover:bg-gray-200">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-gradient-to-b from-gray-100 to-blue-100">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8 text-blue-800">Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <h3 class="text-xl font-semibold mb-2">Programming Languages</h3>
+                    <p>Python, R, C++</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <h3 class="text-xl font-semibold mb-2">Web Technologies</h3>
+                    <p>HTML, CSS</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <h3 class="text-xl font-semibold mb-2">Tools & Databases</h3>
+                    <p>MySQL, Microsoft Excel, Microsoft Word</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="bg-gray-200 py-16">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2">Financial Fraud Detection Using NLP</h3>
+                    <p class="mb-4">Developed a multi-modal financial fraud detection system integrating Llama2 (NLP) and Neo4j (graph database) to analyze structured transactions and unstructured customer data. Enhanced fraud pattern identification through graph-based modeling and machine learning for adaptive, high-accuracy detection.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2">Automated Answer Script Evaluation System</h3>
+                    <p class="mb-4">Designed and implemented an AI-powered answer evaluation system integrating OCR and NLP to automate grading of handwritten student responses. Achieved scalable, unbiased assessment using semantic similarity models and deep learning-based handwriting recognition.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2">Student University Portal</h3>
+                    <p class="mb-4">Developed a comprehensive Student University Portal to streamline academic and administrative processes, enhancing user experience and operational efficiency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-16 bg-gradient-to-b from-blue-100 to-purple-100">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8 text-purple-800">Education</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2">Dublin City University</h3>
+                    <p class="mb-2">MSc Computing (Artificial Intelligence)</p>
+                    <p class="mb-4">Sept 2025 – Sept 2026 | Status: Pursuing</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2">M S Ramaiah University of Applied Sciences</h3>
+                    <p class="mb-2">B.Tech in Computer Science Engineering</p>
+                    <p class="mb-4">Sept 2021 – June 2025 | GPA: 8.43/10.0</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="bg-gray-200 py-16">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8">Certifications</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <h3 class="text-xl font-semibold mb-2">IBM AI Developer – Coursera (In Progress)</h3>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <h3 class="text-xl font-semibold mb-2">Introduction to R – DataCamp</h3>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <h3 class="text-xl font-semibold mb-2">Introduction to C++ – Coding Ninjas</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-gradient-to-b from-purple-100 to-gray-100">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8 text-blue-800">Experience</h2>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold mb-2">Billing Supervisor, Lakshmi Venkateshwara Traders</h3>
+                <p class="mb-4">June 2021 – June 2022</p>
+                <ul class="list-disc list-inside">
+                    <li>Oversaw daily billing operations, ensuring timely and accurate invoice processing across departments</li>
+                    <li>Reviewed and verified billing data, resolving discrepancies to maintain financial accuracy</li>
+                    <li>Demonstrated strong attention to detail and accountability in managing sensitive financial information</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8">Contact Me</h2>
+            <p class="text-lg mb-6">Feel free to reach out for collaborations or opportunities!</p>
+            <div class="flex justify-center space-x-4">
+                <a href="mailto:saiskanda181@gmail.com" class="text-blue-500 hover:underline">Email</a>
+                <a href="https://www.linkedin.com/in/sai-skanda-d-r/" class="text-blue-500 hover:underline">LinkedIn</a>
+                <a href="https://github.com/SaiSkanda18" class="text-blue-500 hover:underline">GitHub</a>
+            </div>
+            <p class="mt-4">Address: A94 XV90 | Phone: 0899 597 162</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-blue-800 to-purple-800 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 Saiskanda Devatha Ramkumar. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
