@@ -34,4 +34,399 @@
             50% { transform: scale(1.02); opacity: 0.9; }
             100% { transform: scale(1); opacity: 0.85; }
         }
-        .navb
+        .navbar {
+            background: linear-gradient(90deg, #1a2a44, #2c3e50);
+            padding: 1.2rem 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 2rem;
+            color: #ffffff !important;
+            letter-spacing: 1px;
+        }
+        .nav-link {
+            color: #ffffff !important;
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin: 0 15px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #00aaff !important;
+            transform: scale(1.1);
+        }
+        .hero-section {
+            background: linear-gradient(135deg, rgba(0, 170, 255, 0.8), rgba(142, 68, 173, 0.8)), url('https://github.com/user-attachments/assets/cc758865-c21a-4584-992f-c130e5f65ec9');
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .hero-section p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+        }
+        .section {
+            padding: 100px 0;
+        }
+        .section h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #1a2a44;
+        }
+        .section h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #1a2a44;
+        }
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            background: linear-gradient(145deg, #ffffff, #f0f4f8);
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 10px 30px rgba(0, 170, 255, 0.3);
+        }
+        .card-body {
+            padding: 2rem;
+        }
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1a2a44;
+        }
+        .card-text {
+            font-size: 1rem;
+            color: #555;
+        }
+        .btn-primary {
+            background: linear-gradient(45deg, #00aaff, #0077cc);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(45deg, #0077cc, #0055aa);
+            transform: scale(1.05);
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .skill-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .skill-item:hover {
+            transform: translateY(-5px);
+        }
+        footer {
+            background: linear-gradient(90deg, #1a2a44, #2c3e50);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #00aaff;
+            transform: scale(1.2);
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            .hero-section p {
+                font-size: 1rem;
+            }
+            .section h2 {
+                font-size: 2rem;
+            }
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+            .nav-link {
+                font-size: 1rem;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Saiskanda Devatha Ramkumar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div data-aos="fade-up">
+                <h1>Saiskanda Devatha Ramkumar</h1>
+                <p>Aspiring AI Developer | MSc Computing (AI) | Dublin, Ireland</p>
+                <a href="#about" class="btn btn-primary">Explore My Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 data-aos="fade-up">About Me</h2>
+            <div class="row">
+                <div class="col-md-10 offset-md-1" data-aos="fade-up" data-aos-delay="100">
+                    <p>Hello! I'm Saiskanda Devatha Ramkumar, an aspiring AI developer with a growing foundation in machine learning, data analysis, and intelligent systems. Currently pursuing my MSc in Computing (Artificial Intelligence) at Dublin City University, I am passionate about building hands-on experience through academic projects and professional certification.</p>
+                    <p>I have a strong interest in benchmarking models and understanding real-world applications of AI. Known for a detail-oriented approach, clear documentation, and a commitment to continuous learning, I am eager to contribute to impactful projects while deepening technical and analytical skills in artificial intelligence.</p>
+                    <p>My journey in AI and machine learning is driven by curiosity and a desire to create solutions that make a meaningful difference. From analyzing ECG data for heart disease detection to building fraud detection systems using NLP, I enjoy tackling complex challenges with data-driven approaches.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section bg-light">
+        <div class="container">
+            <h2 data-aos="fade-up">Technical Skills</h2>
+            <div class="skills-grid" data-aos="fade-up" data-aos-delay="100">
+                <div class="skill-item">
+                    <i class="fas fa-robot fa-2x mb-3" style="color: #00aaff;"></i>
+                    <h5>Artificial Intelligence</h5>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-brain fa-2x mb-3" style="color: #00aaff;"></i>
+                    <h5>Machine Learning</h5>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-chart-line fa-2x mb-3" style="color: #00aaff;"></i>
+                    <h5>Data Analytics</h5>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-chart-bar fa-2x mb-3" style="color: #00aaff;"></i>
+                    <h5>Data Visualization</h5>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-search fa-2x mb-3" style="color: #00aaff;"></i>
+                    <h5>EDA</h5>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-python fa-2x mb-3" style="color: #00aaff;"></i>
+                    <h5>Python</h5>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-r-project fa-2x mb-3" style="color: #00aaff;"></i>
+                    <h5>R</h5>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-database fa-2x mb-3" style="color: #00aaff;"></i>
+                    <h5>MySQL</h5>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-chart-pie fa-2x mb-3" style="color: #00aaff;"></i>
+                    <h5>Power BI</h5>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-table fa-2x mb-3" style="color: #00aaff;"></i>
+                    <h5>Tableau</h5>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-microsoft fa-2x mb-3" style="color: #00aaff;"></i>
+                    <h5>Microsoft Excel</h5>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-html5 fa-2x mb-3" style="color: #00aaff;"></i>
+                    <h5>HTML/CSS</h5>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-microsoft fa-2x mb-3" style="color: #00aaff;"></i>
+                    <h5>Basics of Azure</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 data-aos="fade-up">Projects</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-heartbeat me-2"></i> ECG-Based Heart Disease Detection</h5>
+                            <p class="card-text">Evaluated Random Forest and ResNet1D models on the PTB-XL dataset for multi-label ECG classification using advanced performance metrics and probability calibration. <em>(In Progress)</em></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-bicycle me-2"></i> Dublin Bike Demand Analysis</h5>
+                            <p class="card-text">Analyzed Dublin City Council bike-sharing data using EDA and visualization to identify temporal demand patterns and station-level trends for urban mobility insights.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-robot me-2"></i> Comparative Analysis of LLMs</h5>
+                            <p class="card-text">Conducted empirical benchmarking of Llama 4 Scout vs DeepSeek v3.1 across diverse prompts, analyzing response completeness, token constraints, efficiency, and real-world deployment trade-offs.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-shield-alt me-2"></i> Financial Fraud Detection Using NLP</h5>
+                            <p class="card-text">Built a multi-modal fraud detection system integrating Llama2 and Neo4j to analyze transactional and textual data for adaptive fraud pattern detection.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-file-alt me-2"></i> Automated Answer Script Evaluation</h5>
+                            <p class="card-text">Developed an AI-driven grading system using OCR and NLP to automate handwritten answer evaluation via semantic similarity and deep learning models.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-university me-2"></i> Student University Portal</h5>
+                            <p class="card-text">Designed and implemented a full-stack university portal to optimize academic workflows and improve user experience and system efficiency.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section bg-light">
+        <div class="container">
+            <h2 data-aos="fade-up">Education</h2>
+            <div class="row">
+                <div class="col-md-5 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Dublin City University</h5>
+                            <h6 class="text-muted mb-3">MSc Computing (Artificial Intelligence)</h6>
+                            <p class="card-text"><i class="far fa-calendar-alt me-2"></i>Sept 2025 – Sept 2026</p>
+                            <p class="card-text"><strong>Status:</strong> Pursuing</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">M S Ramaiah University of Applied Sciences</h5>
+                            <h6 class="text-muted mb-3">B.Tech in Computer Science Engineering</h6>
+                            <p class="card-text"><i class="far fa-calendar-alt me-2"></i>Sept 2021 – June 2025</p>
+                            <p class="card-text"><strong>GPA:</strong> 8.43/10.0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3 class="text-center mt-5" data-aos="fade-up">Certifications</h3>
+            <div class="row justify-content-center">
+                <div class="col-md-8" data-aos="fade-up" data-aos-delay="100">
+                    <ul class="list-group">
+                        <li class="list-group-item"><i class="fas fa-certificate me-2" style="color: #00aaff;"></i> IBM AI Developer – Coursera (In Progress)</li>
+                        <li class="list-group-item"><i class="fas fa-certificate me-2" style="color: #00aaff;"></i> Supervised Machine Learning - DeepLearning.AI</li>
+                        <li class="list-group-item"><i class="fas fa-certificate me-2" style="color: #00aaff;"></i> Introduction to C++ – Coding Ninjas</li>
+                        <li class="list-group-item"><i class="fas fa-certificate me-2" style="color: #00aaff;"></i> Introduction to R – DataCamp</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 data-aos="fade-up">Contact Me</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <p><i class="fas fa-envelope me-2" style="color: #00aaff;"></i><strong>Email:</strong> saiskanda181@gmail.com</p>
+                    <p><i class="fas fa-phone me-2" style="color: #00aaff;"></i><strong>Phone:</strong> +353 899 597 162</p>
+                    <p><i class="fab fa-linkedin me-2" style="color: #00aaff;"></i><strong>LinkedIn:</strong> <a href="https://linkedin.com" target="_blank">LinkedIn.com</a></p>
+                    <p><i class="fab fa-github me-2" style="color: #00aaff;"></i><strong>GitHub:</strong> <a href="https://github.com" target="_blank">GitHub.com</a></p>
+                    <p><i class="fas fa-globe me-2" style="color: #00aaff;"></i><strong>Website:</strong> <a href="https://SaiskandaDR.io" target="_blank">SaiskandaDR.io</a></p>
+                    <p><i class="fas fa-map-marker-alt me-2" style="color: #00aaff;"></i><strong>Location:</strong> Sallynoggin, Dublin, Ireland</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Saiskanda Devatha Ramkumar. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:saiskanda181@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html>
